@@ -24,4 +24,15 @@ for p in rows:
             f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage",
             json={"chat_id": os.environ["CHAT_ID"],
                   "text": f"🎂 امروز تولد{age_text} {p['name']} عزیزه، !"})
-      
+
+    if (m, d) == (today_month, today_day):
+        age = current_year - y
+        age_text = f" {age} سالگی" if age > 0 else ""
+        
+        response = requests.post(
+            f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage",
+            json={"chat_id": os.environ["CHAT_ID"],
+                  "text": f"🎂 امروز تولد{age_text} {p['name']} عزیزه، تبریک بگید!"})
+                  
+        print("Telegram Response:", response.text)
+
