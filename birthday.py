@@ -20,18 +20,29 @@ for p in rows:
         age = current_year - y
         age_text = f" ({age})" if age > 0 else ""
         
+        # 8 پیام اصلی و پرانرژی
         messages = [
             f"🚨 Level up alert! Happy Birthday to {p['name']}{age_text}! Keep being awesome. 🔥🥂",
             f"🎉 Massive happy birthday to {p['name']}{age_text}! Cheers to another great year ahead. Let's celebrate! 🥳🎂",
             f"✨ Wishing a fantastic birthday to {p['name']}{age_text}! Here's to health, happiness, and an amazing year. 🍷",
-            f"🎂 Another trip around the sun! Happy Birthday {p['name']}{age_text}! Have an absolute blast today! 💥"
+            f"🎂 Another trip around the sun! Happy Birthday {p['name']}{age_text}! Have an absolute blast today! 💥",
+            f"🥂 Happy Birthday {p['name']}{age_text}! Time to celebrate the legend that you are. Have an epic one! 👑🎉",
+            f"🎈 Huge birthday shoutout to {p['name']}{age_text}! Hope your day is as iconic as you are. Let’s party! 🍻✨",
+            f"🥳 Happy Birthday {p['name']}{age_text}! Wishing you 365 days of good vibes and unforgettable moments. 🚀",
+            f"🔥 It’s {p['name']}’s day! Happy Birthday{age_text}! Ready to make some epic memories today? 🍹🎊"
         ]
         
-        random_msg = random.choice(messages)
+        # 9 تیکه طنز جوان‌پسند
+        funny_quotes = [
+            "Old enough to know better, but still young enough to do it anyway! 😈🍻",
+            "Another year of making highly questionable decisions together! Let's go! 🚀😂",
+            "You’re one year older, but definitely not any wiser! 🧠🤷‍♂️",
+            "Happy birthday to someone who is still young enough to blame their mistakes on their youth! 🤪🎉",
+            "Here’s to pretending we have our lives together for another year! 🥂🤡",
+            "Officially adding another year of pretending to be a responsible adult! Good luck with that. 🕴️🧢",
+            "Happy birthday! Let’s do things we’ll definitely regret but laugh about tomorrow! 🍻🔥",
+            "You might be aging, but your maturity level is safely staying exactly the same. 🧸😎",
+            "Another year closer to becoming that weird friend everyone warns people about! 👽🤘"
+        ]
         
-        response = requests.post(
-            f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage",
-            json={"chat_id": os.environ["CHAT_ID"],
-                  "text": random_msg})
-                  
-        print(f"Telegram Response for {p['name']}:", response.text)
+        final_text = random.
