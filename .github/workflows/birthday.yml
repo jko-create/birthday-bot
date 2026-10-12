@@ -17,3 +17,4 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           SHEET_URL: ${{ secrets.SHEET_URL }}
+      - uses: gautamkrishnar/keepalive-workflow@v2
