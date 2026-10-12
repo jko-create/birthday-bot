@@ -45,4 +45,5 @@ for p in rows:
             "Another year closer to becoming that weird friend everyone warns people about! 👽🤘"
         ]
         
-        final_text = random.
+        final_text = random.choice(messages) + "\n\n" + random.choice(funny_quotes)
+
